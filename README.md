@@ -1,3 +1,28 @@
+1.npx create-next-app@latest(with javascript,no-eslint,no-alias,no-srcdirectory,yes approuter,yes tailwindcss)
+2.npx shadcn@latest init
+3.npx shadcn@latest add button
+4.do changes in tailwindconfig.js to change shadcn components colour. i have commented the place jsut search change
+5.npm install @clerk/nextjs
+6.updating react from 18 to 18.3.1 in package.json
+7.npm i drizzle-orm @neondatabase/serverless
+8.npm i -D drizzle-kit
+9.setup neon (used mohammed ehshan id)
+10.npx shadcn@latest add dialog
+11.npx shadcn@latest add input
+12.npx shadcn@latest add textarea
+13.npm install @google/generative-ai
+14.npm install uuid (generating unique id)
+15.npm i moment (for putting value in createAt)
+16.npm i react-webcam
+17.npm i react-hook-speech-to-text
+18.npx shadcn@latest add sonner
+19.npx shadcn@latest add collapsible
+20.To solve json parse error i have changed the prompt because gemeni was giving some extra information other than json object due to which parse function is giving error
+21.npm i framer-motion
+22.npm i lucide-react
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
