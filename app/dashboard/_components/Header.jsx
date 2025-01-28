@@ -10,7 +10,7 @@ function Header() {
   
 
   return (
-    <div className='flex items-center p-4 justify-between bg-blue-100'>
+    <div className='flex items-center p-4 justify-between bg-blue-black'>
       <h1 className={`font-extrabold text-2xl text-blue-500`}>STUDYAI</h1>
       <ul className='hidden md:flex gap-10 font-medium'>
       <li className={`hover:text-primary hover:font-bold transition-all cursor-pointer ${path=='/dashboard'&&'text-primary font-bold'}`}>DashBoard</li>

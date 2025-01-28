@@ -87,11 +87,12 @@ function RecordAnswerSection({mockInterviewQuestion,activeQuestionIndex,intervie
   }
 
   return (
-    <div >
-      <div className='flex flex-col mt-10 justify-center items-center bg-secondary rounded-lg p-5 bg-blue-200'>
+    <div className='min-h-screen'>
+      <div className='flex flex-col mt-32 justify-center items-center rounded-lg p-5 bg-gray-900'>
         <Image src={'/webcam.png'} width={200} height={200} className='absolute' />
         <Webcam
           mirrored={true}
+          audio={true}
           style={{
             height: 300,
             widht: '100%',
@@ -106,8 +107,8 @@ function RecordAnswerSection({mockInterviewQuestion,activeQuestionIndex,intervie
           <h2 className='text-red-600 animate-pulse gap-2 items-center'>
             <StopCircle /> Stop Recording
           </h2> :
-          <h2 className='text-primary flex gap-2 items-center'>
-           <Mic/> Record Answer
+          <h2 className='text-blue-400 flex gap-2 items-center'>
+           <Mic /> Record Answer
           </h2> 
         }
       </Button>

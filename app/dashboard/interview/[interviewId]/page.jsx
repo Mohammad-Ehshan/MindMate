@@ -33,19 +33,21 @@ function Interview({ params }) {
 
 
   return (
-    <div className='my-10'>
-      <h2 className='font-bold text-2xl'>Start your Interview</h2>
+    <div className='min-h-screen'>
+      <h2 className='font-bold text-5xl bg-gradient-to-r from-blue-300 to-gray-800 bg-clip-text text-transparent tracking-wider text-center p-7'>Start your Interview</h2>
 
       <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
         <div className='flex flex-col my-5 rounded-lg border'>
           <div className='flex flex-col rounded-lg p-5 border gap-5'>
-            <h2 className='text-lg'><strong>Job Role/Position:</strong>{interviewData.jobPosition}</h2>
-            <h2 className='text-lg'><strong>Job Description/Tech Stack:</strong>{interviewData.jobDesc}</h2>
-            <h2 className='text-lg'><strong>Years of Experience:</strong>{interviewData.jobExperience}</h2>
+            <h2 className='text-lg text-gray-300'><strong>Job Role/Position:</strong>{interviewData.jobPosition}</h2>
+            <h2 className='text-lg text-gray-300'><strong>Job Description/Tech Stack:</strong>{interviewData.jobDesc}</h2>
+            <h2 className='text-lg  text-gray-300'><strong>Years of Experience:</strong>{interviewData.jobExperience}</h2>
           </div>
           <div className='p-5 border rounded-lg border-yellow-300 bg-yellow-50'>
             <h2 className='flex gap-2 items-center text-yellow-800'><Lightbulb /><strong>Information</strong></h2>
-            <h2>{process.env.NEXT_PUBLIC_INFORMATION}</h2>
+            <h2 className='text-zinc-700 mt-2'>
+              {/* {process.env.NEXT_PUBLIC_INFORMATION} */}
+              Give Permission to opne you mic and camera.Use the speaker to listen the question and then use the record button to record your interview.Click on the start button to start</h2>
           </div>
         </div>
 
@@ -60,15 +62,15 @@ function Interview({ params }) {
             }}
           /> :
             <>
-              <WebcamIcon className='h-72 w-full p-20 rounded-lg border bg-secondary my-7' />
-              <Button variant="ghost" onClick={() => setWebCamEnabled(true)}>Enable Web Cam and Microphone</Button>
+              <WebcamIcon className='h-72 w-full p-20 rounded-lg border bg-gradient-to-b from-gray-800 to bg-white my-7' />
+              <Button className="bg-blue-400" onClick={() => setWebCamEnabled(true)}>Enable Web Cam and Microphone</Button>
             </>
           }
         </div>
       </div>
       <div className='flex justify-end items-end'>
         <Link href={'/dashboard/interview/'+params.interviewId+'/start'}>
-      <Button>Start Interview</Button>
+      <Button className="bg-blue-400 text-xl">Start Interview</Button>
         </Link>
       </div>
     </div>

@@ -16,7 +16,7 @@ const Heading = () => {
       <h1 className="text-6xl font-bold bg-gradient-to-r from-slate-300 to-slate-700 bg-clip-text text-transparent">
         EFFORTLESSLY CREATE STUNNING 
         <br />
-       <span className="underline underline-offset-7 decoration-zinc-600"> AI-GENERATED </span> <span>CONTENT</span>
+       <span className="underline underline-offset-7 decoration-zinc-600"> AI-GENERATED </span> <span>INTERVIEW</span>
       </h1>
       <p className="text-lg font-semibold text-gray-400 mt-4">
         Generate your image or video to create breathtaking AI-generated visuals in minutes

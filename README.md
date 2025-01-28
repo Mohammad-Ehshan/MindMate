@@ -10,7 +10,7 @@
 10.npx shadcn@latest add dialog
 11.npx shadcn@latest add input
 12.npx shadcn@latest add textarea
-13.npm install @google/generative-ai
+13.npm install @google/generative-ai (used ashmes16 id)
 14.npm install uuid (generating unique id)
 15.npm i moment (for putting value in createAt)
 16.npm i react-webcam

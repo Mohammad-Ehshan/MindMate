@@ -2,11 +2,11 @@ import React from "react";
 
 const Overview = () => {
   return (
-    <div className=' min-h-screen bg-gradient-to-r from-gray-900 via-zinc-900 to-black text-white p-8'>
+    <div className=' min-h-screen bg-gradient-to-r from-[#16050f] via-[#2d0124] to-[#050505]  text-white p-8'>
       <div className="flex justify-between items-center mb-6">
       <h1 className='text-4xl font-caveat text-zinc-500 '>
           <span className='wave'>❁</span>
-           Hey-Hinata 
+           Hey Hinata 
           </h1>
           
         <button className="  bg-gradient-to-l from-slate-700 to-zinc-800 text-zinc-300 font-semibold py-2 px-5 rounded-lg hover:bg-gradient-to-r hover:from-purple-400 hover:via-blue-500 hover:to-pink-600 hover:text-white transition-all duration-300 ease-in-out">
@@ -63,19 +63,20 @@ const Overview = () => {
           <div className="relative h-[250px] w-[250px] mx-auto mt-7">
 
             {/* Placeholder for Radar Chart */}
+            {/* <img src="./chart.png" alt="" /> */}
 
             <div className="absolute inset-3 rounded-full bg-gray-950 opacity-80">
             
             </div>
 
-            <div className="absolute top-[-1.5rem] left-1/2 transform -translate-x-1/2 text-sm">Robin </div>
-            <div className="absolute bottom-[-1.5rem] left-1/2 transform -translate-x-1/2 text-sm">komi </div>
-            <div className="absolute left-[-3rem] top-1/2 transform -translate-y-1/2 text-sm">Fubuki </div>
-            <div className="absolute right-[-3rem] top-1/2 transform -translate-y-1/2 text-sm">Friren </div>
-            <div className="absolute top-[-1rem] left-0  text-sm">Valentine </div>
-            <div className="absolute top-[-1rem] right-0  text-sm">Yor</div>
-            <div className="absolute bottom-[-1rem] left-0  text-sm">Sakura</div>
-            <div className="absolute bottom-[-1rem] right-0  text-sm"> Rio</div>
+            <div className="absolute top-[-1.5rem] left-1/2 transform -translate-x-1/2 text-sm">Correct </div>
+            {/* <div className="absolute bottom-[-1.5rem] left-1/2 transform -translate-x-1/2 text-sm">clarity </div> */}
+            <div className="absolute left-[-3rem] top-1/2 transform -translate-y-1/2 text-sm">Relevan </div>
+            <div className="absolute right-[-3rem] top-1/2 transform -translate-y-1/2 text-sm">Detail </div>
+            <div className="absolute top-[-1rem] left-0  text-sm">Efficiency </div>
+            <div className="absolute top-[-1rem] right-0  text-sm">Creativity</div>
+            <div className="absolute bottom-[-1rem] left-0  text-sm">Communicate</div>
+            <div className="absolute bottom-[-1rem] right-0  text-sm"> ProblemSolving</div>
           </div>
           <div className="text-center mt-16 font-bold hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">Technical Interviews</div>
         </div>
@@ -90,13 +91,13 @@ const Overview = () => {
               
             </div>
 
-            <div className="absolute top-[-1.5rem] left-1/2 transform -translate-x-1/2 text-sm">Robin </div>
-            <div className="absolute bottom-[-1.5rem] left-1/2 transform -translate-x-1/2 text-sm">komi </div>
+            <div className="absolute top-[-1.5rem] left-1/2 transform -translate-x-1/2 text-sm">Knowledge</div>
+            {/* <div className="absolute bottom-[-1.5rem] left-1/2 transform -translate-x-1/2 text-sm">Confidence </div> */}
             <div className="absolute left-[-3rem] top-1/2 transform -translate-y-1/2 text-sm">Fubuki </div>
             <div className="absolute right-[-3rem] top-1/2 transform -translate-y-1/2 text-sm">Friren </div>
-            <div className="absolute top-[-1rem] left-0  text-sm">Valentine </div>
-            <div className="absolute top-[-1rem] right-0  text-sm">Yor</div>
-            <div className="absolute bottom-[-1rem] left-0  text-sm">Sakura</div>
+            <div className="absolute top-[-1rem] left-0  text-sm">Efficieny </div>
+            <div className="absolute top-[-1rem] right-0  text-sm">Relevance</div>
+            <div className="absolute bottom-[-1rem] left-0  text-sm">Communicate</div>
             <div className="absolute bottom-[-1rem] right-0  text-sm"> Rio</div>
             
           </div>
