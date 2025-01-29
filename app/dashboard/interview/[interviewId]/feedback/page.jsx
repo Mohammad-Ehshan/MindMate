@@ -20,6 +20,10 @@ function Feedback({ params }) {
   const [feedbackList, setFeedbackList] = useState([])
   const router = useRouter();
 
+   // Calculate average rating
+   const allRatings = [...pastRatings.map((r) => r.rating), JsonFeedbackResp?.rating];
+   const averageRating = allRatings.reduce((sum, r) => sum + r, 0) / allRatings.length;
+
   useEffect(() => {
     GetFeedback();
   }, [])
@@ -45,7 +49,8 @@ function Feedback({ params }) {
           <h2 className='font-bold text-yellow-500 text-center text-5xl'>Congratulation!</h2>
           <h2 className='font-bold
       text-2xl'>Here is your feedback</h2>
-          <h2 className='text-blue-400 text-2xl my-3 font-medium'>Your overall rating:2/10 <strong></strong></h2>
+          {/* <h2 className='text-blue-400 text-2xl my-3 font-medium'>Your overall rating:2/10 <strong></strong></h2> */}
+          <h2 className='text-blue-400 text-2xl my-3 font-medium'> Average Rating: {averageRating}<strong></strong></h2>
 
           <h2 className='text-sm text-gray-400'>Find below each interview question and answer and feedback for improvement</h2>
 

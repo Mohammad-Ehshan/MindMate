@@ -40,17 +40,21 @@ function AddNewInterview() {
 
     // const InputPrompt="Job Position:"+jobPosition+" , Job Description:"+jobDesc+",Years of Experience:"+jobExperience+" ,Depends on Job Position,Job Description & Years of Experience give us "+process.env.NEXT_PUBLIC_INTERVIEW_QUESTION_COUNT+" interview question along with Answer in JSON format, Give us question and answer field on JSON" //differ now i will write my own prompt
 
-    const InputPrompt=`Job Position:${jobPosition} , Job Description:${jobDesc},Years of Experience:${jobExperience} ,Return exactly ${process.env.NEXT_PUBLIC_INTERVIEW_QUESTION_COUNT} interview questions and their corresponding answers in a valid JSON format.Important:- Ensure that the response is a valid JSON array of objects - Each object should have two fields 'question' and 'answer'- Do not include any additional text, instructions, or comments outside of the JSON structure. `
+    // const InputPrompt=`Job Position:${jobPosition} , Job Description:${jobDesc},Years of Experience:${jobExperience} ,Return exactly ${process.env.NEXT_PUBLIC_INTERVIEW_QUESTION_COUNT} interview questions and their corresponding answers in a valid JSON format.Important:- Ensure that the response is a valid JSON array of objects - Each object should have two fields 'question' and 'answer'- Do not include any additional text, instructions, or comments outside of the JSON structure. `
 
-//     const InputPrompt = `User Profile: Age:${age}, Gender:${gender}, Sleep Schedule:${sleepSchedule}, Personality Type:${personalityType}, Physical Health:${physicalHealth}.  
-// Return exactly ${process.env.NEXT_PUBLIC_MENTAL_HEALTH_ADVICE_COUNT} personalized mental health tips and actionable advice in a valid JSON format.  
-
-// Important:  
-// - Ensure that the response is a valid JSON array of objects.  
-// - Each object should have two fields: 'tip' and 'explanation'.  
-// - The 'tip' field should provide a concise mental health recommendation.  
-// - The 'explanation' field should offer a brief but meaningful justification or further guidance on the tip.  
-// - Do not include any additional text, instructions, or comments outside of the JSON structure.`  
+    const InputPrompt = `  
+    User's Responses:  
+    - Sleep Quality: ${jobPosition}  
+    - Physical Activity: ${jobDesc}  
+    - Workload Stress: ${jobExperience}   
+    
+    Based on these inputs, generate exactly ${process.env.NEXT_PUBLIC_INTERVIEW_QUESTION_COUNT} mental health-related questions and their corresponding answers in a valid JSON format.  
+    
+    Important:  
+    - Ensure that the response is a valid JSON array of objects.  
+    - Each object should have two fields: 'question' and 'answer'.  
+    - Do not include any additional text, instructions, or comments outside of the JSON structure.  
+    `;  
 
     const result=await chatSession.sendMessage(InputPrompt);
     const MockJsonResp=(result.response.text()).replace('```json','').replace('```','')//he has not put await but in previous application i have put await here
@@ -91,52 +95,51 @@ function AddNewInterview() {
       <Dialog open={openDialog}>
         <DialogContent className="bg-gradient-to-r from-slate-400 to-gray-600">
           <DialogHeader>
-            <DialogTitle className="text-xl text-gray-800">Job Interview Information</DialogTitle>
-            {/* <DialogTitle className="text-xl text-gray-800">Personal Information</DialogTitle> */}
+            {/* <DialogTitle className="text-xl text-gray-800">Job Interview Information</DialogTitle> */}
+            <DialogTitle className="text-xl text-gray-800">Personal Information</DialogTitle>
             <DialogDescription>
               <form onSubmit={onSubmit}>
               <div>
-              <h2 className='text-gray-700'>Add details about your job</h2>
-              {/* <h2 className='text-gray-700'>Your Mental Health</h2> */}
+              {/* <h2 className='text-gray-700'>Add details about your job</h2> */}
+              <h2 className='text-gray-700'>Add detail about your daily schedule</h2>
               
               <div className='mt-7 my-3'>
-                <label className='text-black'>Job Role</label>
-                {/* <label className='text-black'>Age</label> */}
-                <Input placeholder="Ex: full stack developer" required
-                // <Input placeholder="18,20,60" required
+                {/* <label className='text-black'>Job Role</label> */}
+                <label className='text-black'>Sleep Quality</label>
+                {/* <Input placeholder="Ex: full stack developer" required */}
+                // <Input placeholder="Poor,below average,average,good,excellent" required
                 onChange={(e)=>setJobPosition(e.target.value)}
                 ></Input>
               </div>
               <div className='my-3'>
-                <label className='text-black'>Job Description</label>
-                {/* <label className='text-black'>Gender</label> */}
-                <Textarea placeholder="Ex:Node,Express,Angular,React" required
+                {/* <label className='text-black'>Job Description</label> */}
+                <label className='text-black'>Physically Active today</label>
+                <Textarea placeholder="Poor,below average, average, good , excellent" required
                 // <Textarea placeholder="Ex: Male,Female,Transgender" required
                 onChange={(e)=>setJobDesc(e.target.value)}
                 />
               </div>
               <div className='my-3'>
-                <label className='text-black'>Experience</label>
+                <label className='text-black'> caffeine or sugar</label>
                 {/* <label className='text-black'>Sleep Schedule</label> */}
-                <Input placeholder="5,10,15,20" type="number" required
-                onChange={(e)=>setJobExperience(e.target.value)}
-                max="60" min="0"/>
+                <Input placeholder="Poor,below, average, average , good , excellent" required
+                onChange={(e)=>setJobExperience(e.target.value)}/>
                 {/* <Input placeholder="Ex:10pm,12pm,2am" type="number" required
                 onChange={(e)=>setJobExperience(e.target.value)}
                 max="60" min="0"/> */}
               </div>
               {/* extra */}
               <div className='my-3'>
-                <label className="text-black">Total Question</label>
-                {/* <label className='text-black'>Personality Type</label> */}
-                <Input placeholder="5,10,15,20" type="number" required max="60" min="0"/>
+                {/* <label className="text-black">Total Question</label> */}
+                <label className='text-black'>Drowsiness Level</label>
+                <Input placeholder="1 to 10" type="number" required max="60" min="0"/>
                 {/* <Input placeholder="Ex:INTJ,ISTP" type="number" required max="60" min="0"/> */}
               </div>
               <div className='mt-7 my-3'>
-                <label className='text-black'>Company</label>
-                {/* <label className='text-black'>Physical Health</label> */}
-                <Input placeholder="Ex:Amazon,Google,Flipkart" required
-                // <Input placeholder="Ex:5'11/80, 5'8/60" required
+                {/* <label className='text-black'>Company</label> */}
+                <label className='text-black'>Anxious or Frustrated</label>
+                {/* <Input placeholder="Ex:Amazon,Google,Flipkart" required */}
+                // <Input placeholder="None, Once or twice , few times , frequently, constantly" required
                 ></Input>
               </div>
               </div>
